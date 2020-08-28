@@ -8,26 +8,23 @@
   </head>
   <body>
     <div id="app">
-      <p>{{count}}</p>
-      <button @click="countUp">+1</button>
-      <p>{{lessThan}}</p>
+      <ul>
+        <template v-for="n in 10">
+          <li>
+            {{n}}
+            <span><a href="https://google.com">編集</a></span>
+            <span><a href="https://twitter.com">削除</a></span>
+          </li>
+          <hr />
+        </template>
+      </ul>
     </div>
     <script>
-      let vue = new Vue({
+      new Vue({
         el: "#app",
         data: {
-          count: 0,
-          message: "こんにちは",
-        },
-        computed: {
-          lessThan: function () {
-            return this.count > 5 ? "5より上" : "5より下";
-          },
-        },
-        methods: {
-          countUp: function () {
-            this.count += 1;
-          },
+          ok: true,
+          fuluts: ["りんご", "ばなな", "ぶどう"],
         },
       });
     </script>
