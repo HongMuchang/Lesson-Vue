@@ -8,28 +8,22 @@
   </head>
   <body>
     <div id="app">
-      <button v-on:click="removeFirstList">先頭を削除</button>
-      <ul>
-        <template v-for="n in fuluts">
-          <li>
-            {{n}}
-            <span><a href="https://google.com">編集</a></span>
-            <span><a href="https://twitter.com">削除</a></span>
-          </li>
-          <hr />
-        </template>
-      </ul>
+      <img :src="imgPath" alt="" />
+      <button @click="chengeMuchan">むちゃん</button>
+      <button @click="chengeApp">アップル</button>
     </div>
     <script>
-      new Vue({
+      var vm = new Vue({
         el: "#app",
         data: {
-          ok: true,
-          fuluts: ["りんご", "ばなな", "ぶどう", "かき", "さくらんぼ"],
+          imgPath: "img/muchan.png",
         },
         methods: {
-          removeFirstList: function () {
-            this.fuluts.shift();
+          chengeMuchan: function () {
+            this.imgPath = "img/muchan.png";
+          },
+          chengeApp: function () {
+            this.imgPath = "img/app_store.png";
           },
         },
       });
