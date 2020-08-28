@@ -8,8 +8,9 @@
   </head>
   <body>
     <div id="app">
+      <button v-on:click="removeFirstList">先頭を削除</button>
       <ul>
-        <template v-for="n in 10">
+        <template v-for="n in fuluts">
           <li>
             {{n}}
             <span><a href="https://google.com">編集</a></span>
@@ -24,7 +25,12 @@
         el: "#app",
         data: {
           ok: true,
-          fuluts: ["りんご", "ばなな", "ぶどう"],
+          fuluts: ["りんご", "ばなな", "ぶどう", "かき", "さくらんぼ"],
+        },
+        methods: {
+          removeFirstList: function () {
+            this.fuluts.shift();
+          },
         },
       });
     </script>
